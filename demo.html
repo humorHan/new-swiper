@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .wrapper {
+            position: relative;
+            height: 30%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .slide-item {
+            position: absolute;
+            width: 40%;
+            height: auto;
+            margin-left: 30%;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<ul class="wrapper">
+    <li class="slide-item">
+        <img src="img/man.png" alt="">
+    </li>
+    <li class="slide-item">
+        <img src="img/lady.png" alt="">
+    </li>
+    <li class="slide-item">
+        <img src="img/lady.png" alt="">
+    </li>
+    <li class="slide-item">
+        <img src="img/family.png" alt="">
+    </li>
+
+    <li class="slide-item">
+        <img src="img/family.png" alt="">
+    </li>
+</ul>
+<div class="pre">点击按钮模拟左滑</div>
+<script src="./new-swiper.js"></script>
+<script>
+    window.onload = function () {
+        mobileSwiper.init('.wrapper', {
+            autoPlay: '5000',
+            slideCb: function () {
+                console.log('触发了滑动应该执行的函数');
+            },
+            pre: '.pre'
+        });
+    };
+</script>
+</body>
+</html>
